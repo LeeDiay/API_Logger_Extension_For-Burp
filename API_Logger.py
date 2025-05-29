@@ -84,14 +84,14 @@ class BurpExtender(IBurpExtender, IHttpListener, ITab):
         # Thêm các nút Export Report, Load CSV, Clear All, căn giữa
         button_panel = JPanel()
         button_panel.setLayout(FlowLayout(FlowLayout.CENTER))
-        export_button = JButton("Export Report", actionPerformed=self.exportReport)
         load_button = JButton("Load CSV", actionPerformed=self.loadCSV)
+        export_button = JButton("Export Report", actionPerformed=self.exportReport)
+        clear_selected_button = JButton("Clear Selected", actionPerformed=self.clearSelected) 
         clear_button = JButton("Clear All", actionPerformed=self.clearAll)
-        clear_selected_button = JButton("Clear Selected", actionPerformed=self.clearSelected)  # Thêm nút mới
-        button_panel.add(export_button)
         button_panel.add(load_button)
+        button_panel.add(export_button)
+        button_panel.add(clear_selected_button) 
         button_panel.add(clear_button)
-        button_panel.add(clear_selected_button)  # Thêm vào panel
 
         # Thêm các thành phần vào panel
         self.panel.add(scrollPane, BorderLayout.CENTER)
